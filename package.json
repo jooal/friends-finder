@@ -1,0 +1,25 @@
+{
+  "name": "friends-finder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "apiRoutes.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jooal/friends-finder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jooal/friends-finder/issues"
+  },
+  "homepage": "https://github.com/jooal/friends-finder#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "path": "^0.12.7"
+  }
+}
