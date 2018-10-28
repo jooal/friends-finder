@@ -29,6 +29,21 @@ var friendsArray= [
         "1"
     ]
     },
+    {name: "Baxter",
+    photo: "../images/baxter.jpg",
+    scores: [
+        "2",
+        "3",
+        "3",
+        "3",
+        "3",
+        "3",
+        "3",
+        "3",
+        "3",
+        "1"
+    ]
+    },
 ]
 
 module.exports = friendsArray;
