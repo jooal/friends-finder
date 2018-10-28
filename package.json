@@ -20,6 +20,7 @@
   "homepage": "https://github.com/jooal/friends-finder#readme",
   "dependencies": {
     "express": "^4.16.4",
+    "modal": "^1.2.0",
     "path": "^0.12.7"
   }
 }

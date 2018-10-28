@@ -13,17 +13,33 @@ app.get("/api/friends", function (request, response){
 app.post("/api/friends", function (request, response) {
     var newProfile = req.body;
     console.log(newProfile);
-
-    //scores for new profile
+    var scoresArray = [];
+    var bestMatch = 0;
     var scores = newProfile.scores;
+    var matchName= "";
+    var matchImage = "";
+    var totalDifference = 1000;
 
-    //need loop for friends array
-    for (var i =0; i<friendsArray.length; i++) {
-
+    for (var i =0; i<friends.length; i++) {
+        var difference = 0;
+        for (var a=0; a< scores.length; a++) {
+            difference += Math.abs(friends[i].scores[a] - scores[a]);
+        }
+        scoresArray.push(difference);
+        if (difference < totalDifference) {
+            totalDifference=difference;
+            matchName = friends[i].name;
+            matchImage = friends[i].photo;
+        }
     }
+  
+   
+    response.json({matchName: matchName, matchImage: matchImage});
+
+
+ 
 
     friendsArray.push(newProfile);
-    response.json(newProfile);
 });
 }
 
