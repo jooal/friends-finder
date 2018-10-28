@@ -9,39 +9,32 @@ app.get("/api/friends", function (request, response){
     response.json(friends);
 });
 
-// create new profile - takes in JSON input
+// push new profile to /api/friends page - takes in JSON input
 app.post("/api/friends", function (request, response) {
-    var newProfile = req.body;
-    console.log(newProfile);
-    var scoresArray = [];
+    friends.push(request.body);
+    response.json(true);
+    //now get match
+    var newUserScores = request.body.scores;
     var bestMatch = 0;
-    var scores = newProfile.scores;
-    var matchName= "";
-    var matchImage = "";
-    var totalDifference = 1000;
+    var scoresArray = [];
+    //run through friends
+    for (var i =0; i<friends.length; i++){
+        var scoresDifference = 0; 
+        for (var j=0; j<newUserScores.length; j++) {
+            scoresDifference += (Math.abs(parseInt(friends[i].scores[j]- parseInt(newUserScores[j]))));
 
-    for (var i =0; i<friends.length; i++) {
-        var difference = 0;
-        for (var a=0; a< scores.length; a++) {
-            difference += Math.abs(friends[i].scores[a] - scores[a]);
         }
-        scoresArray.push(difference);
-        if (difference < totalDifference) {
-            totalDifference=difference;
-            matchName = friends[i].name;
-            matchImage = friends[i].photo;
-        }
+        scoresArray.push(scoresDifference);
     }
-  
-   
-    response.json({matchName: matchName, matchImage: matchImage});
 
-
- 
-
-    friendsArray.push(newProfile);
+    for (var i = 0; i<scoresArray.length; i++) {
+        if (scoresArray[i] <= scoresArray[bestMatch]) {
+            bestMatch=i;
+        }
+        var bff = friends[bestMatch];
+        response.json(bff);
+    }
 });
 }
-
 
 
