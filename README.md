@@ -6,9 +6,9 @@ The purpose of this app is to practice using node.js, npm packages, and express.
 ![Survey page](/images/survey.png)
 
 # Technologies
-  *Node.js
-  *NPM express package
-  *NPM path package
+  * Node.js
+  * NPM express package
+  * NPM path package
  
  
 # Install
