@@ -27,4 +27,4 @@ node server.js
 The application will now be running locally on PORT 8080.
 
 # Demo
-Heroku link: 
+Heroku link: https://infinite-bastion-96104.herokuapp.com/
