@@ -25,6 +25,7 @@ app.post("/api/friends", function (request, response) {
 
         }
         scoresArray.push(scoresDifference);
+        console.log(scoresArray);
     }
 
     for (var i = 0; i<scoresArray.length; i++) {

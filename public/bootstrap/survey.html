@@ -212,8 +212,8 @@ $("#submitButton").on("click", function(event) {
     };
     $.post("/api/friends", newProfile)
         .done(function(data) {
-            $("#userMatch").html(data.matchName);
-                $("#userMatchImage").attr("src", data.matchImage);
+            $("#matchName").html(data.matchName);
+                $("#matchImage").attr("src", data.matchImage);
                     $("#myModal").modal();
                       });
         });
